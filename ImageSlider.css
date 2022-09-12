@@ -1,0 +1,360 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');*/
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+
+
+.slide-container .prev,
+.slide-container .next {
+  cursor: pointer;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  height: 100%;
+  margin-top: -33px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: all 100s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.slide-container .prev:hover,
+.slide-container .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+}
+
+.slide-container .prev {
+  left: 2px;
+}
+
+.slide-container .next {
+  right: 2px;
+}
+
+.dots-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.dots-container .dot {
+  cursor: pointer;
+  margin: 5px;
+  width: 20px;
+  height: 20px;
+  color: #333;
+  border-radius: 50%;
+  background-color: #dfd6ce;
+}
+
+.dots-container .dot.active {
+  border: 2px solid green;
+}
+
+* {
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  /*overflow: hidden;*/
+  /*   background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%); */
+}
+
+body h1,
+h2 {
+  text-align: center;
+}
+
+.slide-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1000px;
+  margin: auto;
+  position: relative;
+}
+
+.slide-container .slide {
+  display: none;
+  width: 100%;
+}
+
+.slide-container .slide.fade {
+  animation: fade 100s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+
+.slide-container .slide img {
+  width: 99%;
+}
+
+@media screen and (max-width: 450px) {
+  html {
+    width: fit-content;
+  }
+}
+
+
+
+@media screen and (min-width: 960px) {
+
+
+
+  .slide-container .slide img {
+    width: 400px;
+    height: 600px;
+  }
+
+  .slide-container {
+    position: relative;
+  }
+
+  .slide-container .prev,
+  .slide-container .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: 5px;
+    height: 50px;
+    color: #f6d903;
+    font-weight: bold;
+    font-size: 20px;
+    transition: all 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+}
+
+@media screen and (max-width: 960px) {
+
+  .slide-container .prev,
+  .slide-container .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: 5px;
+    height: 50px;
+    color: #f6d903;
+    font-weight: bold;
+    font-size: 20px;
+    transition: all 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+
+  .slide-container .prev {
+    left: 2px;
+  }
+
+  .slide-container .next {
+    right: 2px;
+  }
+}
+
+/** Lo de las cards */
+
+.container-card {
+  position: relative;
+  width: 400px;
+  height: 600px;
+  /*display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 50px 0;*/
+  /*transform-style: preserve-3d;*/
+}
+
+.container-card .card:hover {
+  filter: drop-shadow(2.5px 2.5px 5px #161616);
+  /*box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);*/
+  border-radius: 5px;
+}
+
+/*.container-card .card {
+  position: relative;
+  width: 450px;
+  height: 600px;
+  margin: 60px 0;
+  background: #000;
+  transform-style: ;
+}*/
+
+
+/*.container-card .card .imgCrd {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+}*/
+
+.container-card .card .contentCrd {
+  position: absolute;
+  top: 50%;
+  left: 50px;
+  right: 50px;
+  background: rgb(249, 233, 233);
+  transform: translateZ(0px) scaleY(0);
+  padding: 45px 30px;
+  border-radius: 10px;
+  transform-origin: top;
+  transition: 0.5s;
+  /*transform-style: preserve-3d;*/
+}
+
+.container-card .card:hover .contentCrd {
+  transform: translateZ(0px) scaleY(1);
+}
+
+/* Lo del shine en el hover */
+
+.test-shine {
+
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0px;
+  border-radius: 5px;
+
+  overflow: hidden;
+  display: inline-block;
+}
+
+.test-shine:after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 20%;
+  height: 200%;
+  opacity: 0;
+  transform: rotate(30deg);
+
+  background: rgba(255, 255, 255, 0.13);
+  background: linear-gradient(to right,
+      rgba(255, 255, 255, 0.13) 0%,
+      rgba(255, 255, 255, 0.13) 77%,
+      rgba(255, 255, 255, 0.5) 92%,
+      rgba(255, 255, 255, 0.0) 100%);
+}
+
+/* Hover state - trigger effect */
+.test-shine:hover:after {
+  opacity: 1;
+  left: 130%;
+  transition-property: left, top, opacity;
+  transition-duration: 0.7s, 0.7s, 0.15s;
+  transition-timing-function: ease;
+}
+
+/* Active state */
+.test-shine:active:after {
+  opacity: 0;
+}
+
+/* Efecto del texto da clic */
+
+.reboteIn_derecha {
+  font-family: 'Poppins', sans-serif;
+  /*font-size: 10px;*/
+  /* background-color: #a8cf45; */
+  text-align: center;
+  /* font-weight: bolder; */
+  /* width: 150px; */
+  /* height: 150px; */
+  position: relative;
+  /* margin: 50px 50px; */
+  line-height: 50px;
+}
+
+/* Asignamos las animaciones */
+
+.reboteIn_derecha {
+
+  animation: reboteIn_derecha 1s 2;
+
+}
+
+
+
+/* Creamos la animación ReboteIn Derecha (con keyframes) */
+
+@keyframes reboteIn_derecha {
+
+  0% {
+    opacity: 0;
+    transform: translateX(100vw);
+  }
+
+  50% {
+
+    transform: translateX(-30px);
+    opacity: 1;
+  }
+
+  70% {
+
+    transform: translateX(10px);
+
+  }
+
+}
+
+.title {
+  margin: 0 auto;
+  /*font-family: "Pacifico", cursive;*/
+  font-family: "Pacifico";
+  font-size: 0.7rem;
+  background: linear-gradient(90deg, rgba(129, 132, 232, 1) 0%, rgba(158, 186, 230, 1) 18%, rgba(194, 191, 226, 1) 46%, rgba(237, 197, 235, 1) 69%, rgba(238, 174, 202, 1) 87%, rgba(238, 174, 202, 1) 87%, rgba(255, 134, 160, 1) 100%);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/** Efectp Neon **/
+.neon-text {
+  background: #000;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  overflow: hidden;
+  position: relative;
+  padding: 10px;
+  text-transform: uppercase;
+  animation: 1s ease infinite reverse glow;
+}
+
+.neon-text:before {
+  content: '';
+  position: absolute;
+  mix-blend-mode: difference;
+  filter: blur(3px);
+}
+
+.neon-text:after {
+  content: "";
+  background: linear-gradient(45deg, #7b4397 30%, #dc2430 70%);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  mix-blend-mode: multiply;
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0;
+  }
+
+  75% {
+    text-shadow: 0 0 16px;
+    filter: brightness(300%);
+  }
+}
