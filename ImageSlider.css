@@ -65,15 +65,14 @@
 body {
   width: 100%;
   height: 100%;
-
   min-height: 100vh;
   background-color: var(--black-10);
   padding-top: 4vh;
   padding-bottom: 1vh;
-  padding-left: 4vh;
-  padding-right: 4vh;
-  /*overflow: hidden;*/
-  /*   background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%); */
+  padding-left: 1vh;
+  padding-right: 1vh;
+  /* overflow: hidden; */
+  /* background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);*/
 }
 
 body h1,
@@ -397,15 +396,16 @@ h2 {
 }
 
 #myText {
-  font-size: 15px;
+  font-size: 20px;
   margin-top: 50px;
-  margin-bottom: 10px;
+  margin-bottom: 50px;
   color: #158286;
   word-spacing: 10px;
-  text-shadow: 1px 1px 2.5px grey;
+  /*text-shadow: 1px 1px 2.5px grey;*/
   width: 100%;
   text-align: center;
-  font-family: 'Monoton', cursive;
+  /*font-family: 'Monoton', cursive;*/
+  font-family: 'Dosis', sans-serif;
   animation-name: track-in-out;
   animation-duration: 8s;
   animation-iteration-count: infinite;
@@ -423,7 +423,7 @@ h2 {
     margin-top: 50px;
     margin-bottom: 10px;
     color: #158286;
-    word-spacing: 10px;
+    word-spacing: 5px;
     /*text-shadow: 1px 1px 2.5px grey;*/
     width: 100%;
     text-align: center;
@@ -437,6 +437,7 @@ h2 {
 
 
 @media screen and (min-width: 960px) {
+
 
 
 
@@ -466,7 +467,39 @@ h2 {
 }
 
 @media screen and (max-width: 960px) {
+  #myText {
+    font-size: 8px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    color: #158286;
+    word-spacing: 8px;
+    /*text-shadow: 1px 1px 2.5px grey;*/
+    width: 100%;
+    text-align: center;
+    /*font-family: 'Monoton', cursive;*/
+    font-family: 'Dosis', sans-serif;
+    animation-name: track-in-out;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+  }
 
+
+}
+
+.text-responsive:before {
+  content: attr(data-desktoptext);
+}
+
+@media (max-width:900px) {
+  .text-responsive:before {
+    content: attr(data-tablettext);
+  }
+}
+
+@media (max-width:400px) {
+  .text-responsive:before {
+    content: attr(data-phonetext);
+  }
 
 
   .slide-container .prev,
