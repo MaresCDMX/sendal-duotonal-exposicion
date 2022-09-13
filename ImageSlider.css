@@ -411,6 +411,11 @@ h2 {
   animation-iteration-count: infinite;
 }
 
+
+/*.column {
+  width: 100%;
+}*/
+
 /* media queries */
 
 @media screen and (max-width: 450px) {
@@ -499,6 +504,10 @@ h2 {
 @media (max-width:400px) {
   .text-responsive:before {
     content: attr(data-phonetext);
+  }
+
+  .column {
+    width: 360px;
   }
 
 
