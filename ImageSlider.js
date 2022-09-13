@@ -46,3 +46,24 @@ $(window).on("load", function () {
     $(".page-loader").fadeOut("slow");
   }, 3000);
 });
+
+/*
+Codigo EXTRA para Mostrar/Ocultar con solo 1 Click*/
+
+var click = false;
+$(".card").click(function () {
+  if (click == false) {
+    /*$(".sub ul").css("transform", "translateY(0%)");*/
+    /*$(".mycontent").addClass("contentCrd").removeClass("contentCrd");*/
+    $(".mycontent").css("transform", "translateZ(0px) scaleY(0)");
+
+    console.log(click);
+    click = true;
+  } else {
+    /*$(".mycontent").removeClass("contentCrd").addClass("contentCrd");*/
+    $(".mycontent").css("transform", "translateZ(0px) scaleY(1)");
+
+    console.log(click);
+    click = false;
+  }
+});

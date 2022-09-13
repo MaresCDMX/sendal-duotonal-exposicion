@@ -192,7 +192,8 @@ h2 {
 }
 
 /* Hover state - trigger effect */
-.test-shine:hover:after {
+.test-shine:hover:after,
+.test-shine:focus {
   opacity: 1;
   left: 130%;
   transition-property: left, top, opacity;
@@ -205,7 +206,7 @@ h2 {
   opacity: 0;
 }
 
-/* Efecto del texto da clic */
+/* Efecto del texto rebote */
 
 .reboteIn_derecha {
   font-family: 'Poppins', sans-serif;
